@@ -1,8 +1,8 @@
 void main() {
   
-  final ironMan = hero( "tony star", "traje robotico" );
+  final ironMan = hero( name:"Tony Start" );
   
-  print(ironMan);
+  print(ironMan.toString());
   print(ironMan.name);
   print(ironMan.power);
 
@@ -12,7 +12,10 @@ class hero {
   String name;
   String power;
   
-  hero( String pName, String pPower ) 
-    : name = pName,
-      power = pPower;
+  hero( { required this.name, this.power = "Sin Poder" } );
+
+  @override
+  String toString() {
+    return "$name - $power";
+  }
 }
